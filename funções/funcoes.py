@@ -4,6 +4,10 @@ from datetime import datetime
 import urllib.request
 
 def interromper():
+    """
+    \033[3;93m-> Essa função será usada quando ocorrer um erro de "KeyboardInterrupt", para interromper o programa\033[m
+    """
+
     print('\033[3;91mO usuário preferiu finalizar o programa.\033[m')
     print('\n\033[mObrigado por ultilizar este programa.\033[3;94m Volte Sempre!')
     print('https://github.com/pedrosinsenp\033[m')
@@ -268,6 +272,10 @@ def menu(*n):
 
     
 def tempo():
+    """
+    \033[3;93m-> Essa função serve para mostrar o tempo e data de maneira formatada\033[m
+    """
+
     if len(str(datetime.now().hour)) == 1:
         print(f'0{datetime.now().hour}', end=':')
     else:
