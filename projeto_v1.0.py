@@ -1488,21 +1488,18 @@ while True:
                     funcoes.escolha_user('Qual sua opção?', 2)
 
                     if funcoes.escolha_usuario == 1:
-                        cont_senha = n50 = n20 = n10 = n1 = saldo_usuario = tot_depositado = tot_saque = 0
+                        n50 = n20 = n10 = n1 = saldo_usuario = tot_depositado = tot_saque = 0
+                        cont_senha = 1
 
                         senha = funcoes.verificar_num('\033[mBem vindo! Digite a senha do cartão [1000]:\033[92m ', sem_num_min=True, forcar_valor_int=True)
                         while senha != 1000:
-                            cont_senha += 1
-                            if cont_senha == 1:
-                                senha = funcoes.verificar_num('\033[91mSenha inválida! (1 de 3 tentativas)\033[m Digite a senha do cartão:\033[92m ', sem_num_min=True, forcar_valor_int=True)
-                            elif cont_senha == 2:
-                                senha = funcoes.verificar_num('\033[91mSenha inválida! (2 de 3 tentativas)\033[m Digite a senha do cartão:\033[92m ', sem_num_min=True, forcar_valor_int=True)
-                            elif cont_senha == 3:
-                                senha = funcoes.verificar_num('\033[91mSenha inválida! (3 de 3 tentativas)\033[m Digite a senha do cartão:\033[92m ', sem_num_min=True, forcar_valor_int=True)
-                            else:
+                            if cont_senha == 4:
                                 print('\033[91mTentativas esgotadas!\033[m aguarde 10 segundos e tente novamente.')
                                 sleep(10)
                                 senha = funcoes.verificar_num('Bem vindo! Digite a senha do cartão:\033[92m ', sem_num_min=True ,forcar_valor_int=True)
+                            else:
+                                senha = funcoes.verificar_num(f'\033[91mSenha inválida! ({cont_senha} de 3 tentativas)\033[m Digite a senha do cartão:\033[92m ', sem_num_min=True, forcar_valor_int=True)
+                                cont_senha += 1
                         print('\033[94mAcesso liberado!\033[m')
 
                         while True:
@@ -1558,6 +1555,7 @@ while True:
                                                         print(f'\033[mVocê sacou {n1} moedas de R$ \033[94m1\033[m')
                                                     else:
                                                         print(f'\033[mVocê sacou 1 moeda de R$ \033[94m1\033[m')
+                                                n50 = n20 = n10 = n1 = 0
                                                 funcoes.linha('roxo', '16')
                                                 sleep(0.6)
                                                 break
