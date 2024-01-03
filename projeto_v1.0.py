@@ -1490,8 +1490,8 @@ while True:
                     if funcoes.escolha_usuario == 1:
                         cont_senha = n50 = n20 = n10 = n1 = saldo_usuario = tot_depositado = tot_saque = 0
 
-                        senha = funcoes.verificar_num('\033[mBem vindo! Digite a senha do cartão [0000]:\033[92m ', sem_num_min=True, forcar_valor_int=True)
-                        while senha != 0000:
+                        senha = funcoes.verificar_num('\033[mBem vindo! Digite a senha do cartão [1000]:\033[92m ', sem_num_min=True, forcar_valor_int=True)
+                        while senha != 1000:
                             cont_senha += 1
                             if cont_senha == 1:
                                 senha = funcoes.verificar_num('\033[91mSenha inválida! (1 de 3 tentativas)\033[m Digite a senha do cartão:\033[92m ', sem_num_min=True, forcar_valor_int=True)
