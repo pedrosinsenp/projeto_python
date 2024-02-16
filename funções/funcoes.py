@@ -2,6 +2,7 @@ from time import sleep
 from webbrowser import open
 from datetime import datetime
 import urllib.request
+import calendar
 
 def interromper():
     """
@@ -291,17 +292,10 @@ def tempo():
     else:
         print(f'{datetime.now().second}', end=' ')
 
-    if len(str(datetime.now().day)) == 1:
-        print(f'0{datetime.now().day}', end='/')
-    else:
-        print(f'{datetime.now().day}', end='/')
-
-    if len(str(datetime.now().month)) == 1:
-        print(f'0{datetime.now().month}', end='/')
-    else:
-        print(f'{datetime.now().month}', end='/')
-
-    print(datetime.now().year)
+    yy = datetime.now().year
+    mm = datetime.now().month
+    print("\n")
+    print(calendar.month(yy, mm))
 
 
     # CORES
